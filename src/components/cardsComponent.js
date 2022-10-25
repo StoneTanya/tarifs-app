@@ -5,7 +5,7 @@ import CardTarif from "./Card";
 function CardsBlock() {
     const TarifComponents = tarifsData.map(tarif => 
     <CardTarif
-    key={tarif.name} 
+    key={tarif.id} 
     tarif={tarif} />)
 
     return (
