@@ -1,18 +1,30 @@
-import React from "react";
+import React, {useState} from 'react';
 import tarifsData from "./cardsData";
-import CardTarif from "./Card";
+import CardElement from "./Card";
 
 function CardsBlock() {
-    const TarifComponents = tarifsData.map(tarif => 
-    <CardTarif
-    key={tarif.id} 
-    tarif={tarif} />)
+    const [tarif, setTarif] = useState(tarifsData);
+    const toggleSelectTarif = (tarifID) => {
+        const changedTarifs = tarifsData.map(tarif => {
+            if (tarif.id === tarifID) {
+                return {...tarif, selected: !tarif.selected}
+            }
+            return tarif
+        })
+        setTarif(changedTarifs)
+    }
+
 
     return (
-        <React.Fragment>
-            {TarifComponents}
-        </React.Fragment>
+    tarifsData.map(tarif => 
+    <CardElement
+    key={tarif.id} 
+    tarif={tarif}
+    toggleSelectTarif={toggleSelectTarif}
+/>)
+        
     )
 }
 
 export default CardsBlock
+
