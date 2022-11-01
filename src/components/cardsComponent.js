@@ -5,12 +5,12 @@ import CardElement from "./Card";
 function CardsBlock() {
     const [tarifs, setSelected] = useState(tarifsData);
     
-    const selectTarif = (id) => {           //функция выбора тарифа, запускаемая по клику 
+    const selectTarif = (tarifID) => {           //функция выбора тарифа, запускаемая по клику 
         const selectedTarif = tarifs.map(tarif => {
-            if (tarif.id === id) {
-            return {...tarif, selected: true}
+            if (tarif.id === tarifID) {
+            return {...tarif, selected: !tarif.selected}
         }
-        return tarif
+        return {...tarif, selected: false}
         })
         setSelected(selectedTarif)
     }

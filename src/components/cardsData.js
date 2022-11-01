@@ -3,7 +3,7 @@ let tarifsData = [{
     name: "Безлимитный 300",
     price: "300",
     speed: "10",
-    selected: false
+    selected: false,
 }, {
     id: 450,
     name: "Безлимитный 450",

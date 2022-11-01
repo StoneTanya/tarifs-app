@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import styles from './cards.module.scss';
@@ -14,7 +14,6 @@ const style = {
 
 export default function CardTarif(props) {
     const {tarif, selectTarif} = props
-    useEffect(() => {}, [tarif]);
 
     return (
         <>
